@@ -1,26 +1,65 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <header-app></header-app>
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { useRoute } from "vue-router";
+import HeaderApp from './components/HeaderApp.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: {HeaderApp},
+  name: "App",
+    
+    mounted(){
+    if(useRoute().name === 'buat'){
+      document.title = "Web Kampus"
+    }
+  },
+};
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:'Roboto', sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
 }
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+/* .fade-enter-from{
+  opacity: 0;
+}
+.fade-enter-to{
+  opacity: 1;
+}
+.fade-enter-active{
+  transition: .2s all ease-out;
+}
+.fade-leave-from{
+  opacity: 1;
+}
+.fade-leave-to{
+ opacity: 0;
+}
+.fade-leave-active{
+  transition: .2s all ease-in;
+} */
 </style>
