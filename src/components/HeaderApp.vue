@@ -40,6 +40,7 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  height: 50px;
 }
 .header2 {
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.08);
@@ -49,6 +50,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   background-color: #0099ff;
+  height: 6vh;
 }
 nav{
   width: 700px;
@@ -97,4 +99,30 @@ ul {
   color: rgba(46, 104, 158, 0.445);
 }
 
+@media screen and (max-width : 630px) {
+  h1{
+    font-size: .9rem;
+  }
+  li a{
+    font-size: .9rem;
+  }
+}
+@media screen and (max-width : 533px) {
+  h1{
+    font-size: .7rem;
+  }
+  li a{
+    font-size: .7rem;
+  }
+}
+@media screen and (max-width : 330px) {
+  ul{
+    display: flex;
+    flex-direction: column;
+    /* background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    position: absolute;
+    width: 100vq;
+    height: 100%; */
+  }
+}
 </style>

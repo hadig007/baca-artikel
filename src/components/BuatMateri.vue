@@ -90,10 +90,10 @@ export default {
       } else {
         this.statusText = "Maaf Password yang anda masukkan salah!";
         this.passError = true;
-        setTimeout(()=>{
-          this.counter--
+        setTimeout(() => {
+          this.counter--;
           this.$router.push("/beranda");
-        },1000)
+        }, 1000);
       }
     },
   },
@@ -111,15 +111,19 @@ export default {
 .box {
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.08);
   position: absolute;
-  top: 30vh;
-  right: 35%;
-  left: 35%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-color: #395b64;
   border-radius: 4px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   width: 350px;
+  max-height: 350px;
+  margin: auto auto;
+  justify-content: center;
 }
 input,
 select,
@@ -158,5 +162,10 @@ h6 {
   color: #fffdf7ce;
   font-weight: normal;
   font-size: 0.9rem;
+}
+@media screen and (max-width: 530px) {
+  .box {
+    transform: scale(.8);
+  }
 }
 </style>
