@@ -8,7 +8,7 @@
         d="M0,96L80,128C160,160,320,224,480,218.7C640,213,800,139,960,106.7C1120,75,1280,85,1360,90.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
       ></path>
     </svg>
-    <div class="box" v-if="isAdmin !== true">
+    <div   class="boxa"  v-if="isAdmin !== true">
       <h1>WEB KAMPUS</h1>
       <p>Isi data inisial untuk memulai menulis artikel anda</p>
       <hr />
@@ -28,7 +28,7 @@
       <button @click="mulai">Mulai Menulis</button>
     </div>
 
-    <div class="box" v-else>
+    <div  :class="[isAdmin===false?'' : 'boxb']" v-else>
       <h1>Maaf</h1>
       <p>{{ statusText }}</p>
       <input
@@ -103,15 +103,16 @@ export default {
 <style scoped>
 .buat {
   max-width: 100vw;
+  height: 80vh;
 }
 .biru {
-  height: 30vh;
+  height: 20vh;
   background-color: #0099ff;
 }
-.box {
+.boxa {
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.08);
   position: absolute;
-  top: 0;
+  top: 20vh;
   bottom: 0;
   right: 0;
   left: 0;
@@ -122,7 +123,24 @@ export default {
   flex-direction: column;
   width: 350px;
   max-height: 350px;
-  margin: auto auto;
+  margin: 0 auto;
+  justify-content: center;
+}
+.boxb {
+  box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 20vh;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #395b64;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 200px;
+  margin: 0 auto;
   justify-content: center;
 }
 input,

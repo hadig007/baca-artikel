@@ -48,12 +48,13 @@ export default {
   width: 90vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin: 0 auto 2rem auto;
 }
 .head {
-  width: 90vw;
+  /* width: 90vw; */
+  max-width: 700px;
   /* border: solid 1px grey; */
   display: flex;
   flex-direction: column;
@@ -61,7 +62,6 @@ export default {
 .judul,
 .penulis,
 .waktu {
-  width: 90vw;
   /* line-height: 1.5rem; */
   align-self: flex-start;
   font-size: 1.1rem;
@@ -85,7 +85,7 @@ export default {
 }
 .ctn {
   margin-top: 0.5rem;
-  width: 100%;
+  max-width: 700px;
   /* border: solid 1px grey; */
   overflow: auto;
   display: flex;
